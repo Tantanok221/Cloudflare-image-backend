@@ -9,6 +9,7 @@ import (
 	"context"
 
 	"github.com/jackc/pgx/v5/pgtype"
+	utils "github.com/tantanok221/cloudflare-image-backend/utils"
 )
 
 const createImage = `-- name: CreateImage :exec
@@ -16,7 +17,7 @@ INSERT INTO Cloudflare_Image (path,author_name) VALUES ($1,$2)
 `
 
 type CreateImageParams struct {
-	Path       []byte      `json:"path"`
+	Path       utils.Path  `json:"path"`
 	AuthorName pgtype.Text `json:"author_name"`
 }
 

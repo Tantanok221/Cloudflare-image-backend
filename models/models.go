@@ -6,10 +6,11 @@ package models
 
 import (
 	"github.com/jackc/pgx/v5/pgtype"
+	utils "github.com/tantanok221/cloudflare-image-backend/utils"
 )
 
 type CloudflareImage struct {
 	ID         int64       `json:"id"`
-	Path       []byte      `json:"path"`
+	Path       utils.Path  `json:"path"`
 	AuthorName pgtype.Text `json:"author_name"`
 }
