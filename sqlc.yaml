@@ -10,3 +10,12 @@ sql:
         sql_package: "pgx/v5"
         emit_exact_table_names: true
         emit_json_tags: true
+        overrides:
+          - column: "public.Cloudflare_Image.path"
+            go_type:
+              # for import, package and type please refer the go code above
+              import: "github.com/tantanok221/cloudflare-image-backend/utils"
+              package: "utils"
+              # put your type here,
+              # if you want struct instead, put the CustomParams
+              type: "Path"

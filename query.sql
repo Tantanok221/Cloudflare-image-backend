@@ -1,2 +1,2 @@
 -- name: CreateImage :exec
-INSERT INTO Cloudflare_Image (path,image_link) VALUES ($1,$2);
+INSERT INTO Cloudflare_Image (path,author_name) VALUES ($1,$2);

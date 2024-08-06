@@ -12,15 +12,15 @@ import (
 )
 
 const createImage = `-- name: CreateImage :exec
-INSERT INTO Cloudflare_Image (path,image_link) VALUES ($1,$2)
+INSERT INTO Cloudflare_Image (path,author_name) VALUES ($1,$2)
 `
 
 type CreateImageParams struct {
-	Path      pgtype.Text `json:"path"`
-	ImageLink pgtype.Text `json:"image_link"`
+	Path       []byte      `json:"path"`
+	AuthorName pgtype.Text `json:"author_name"`
 }
 
 func (q *Queries) CreateImage(ctx context.Context, arg CreateImageParams) error {
-	_, err := q.db.Exec(ctx, createImage, arg.Path, arg.ImageLink)
+	_, err := q.db.Exec(ctx, createImage, arg.Path, arg.AuthorName)
 	return err
 }

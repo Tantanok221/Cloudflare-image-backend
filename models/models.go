@@ -9,7 +9,7 @@ import (
 )
 
 type CloudflareImage struct {
-	ID        int64       `json:"id"`
-	Path      pgtype.Text `json:"path"`
-	ImageLink pgtype.Text `json:"image_link"`
+	ID         int64       `json:"id"`
+	Path       []byte      `json:"path"`
+	AuthorName pgtype.Text `json:"author_name"`
 }
