@@ -8,9 +8,6 @@ import (
 func Route() *http.ServeMux {
 	mux := http.NewServeMux()
 
-	//Handler := &handler.ArtistHandler{
-	//	DB: database,
-	//}
 	mux.Handle("POST /image", handler.PostImage())
 	//mux.Handle("GET /event/{event}/artist", handler.(Handler))
 	//mux.Handle("GET /artist/{id}", Handler.GetArtistById())

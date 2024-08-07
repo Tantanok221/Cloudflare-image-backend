@@ -11,7 +11,7 @@ import (
 func main() {
 	errorLog := log.New(os.Stderr, "ERROR:\t", log.Ldate|log.Ltime|log.Lshortfile)
 	addr := flag.String("addr", ":3001", "HTTP Network address")
-	print("Server Running")
+	print("\n Server Running \n")
 	//database := db.Init()
 	srv := &http.Server{
 		Addr:     *addr,
